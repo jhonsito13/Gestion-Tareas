@@ -1,7 +1,7 @@
 // TaskForm.jsx
 import React, { useState } from 'react';
 
-function TaskForm({ onAddTask }) {
+function TaskForm({ onAddTask, }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [errors, setErrors] = useState({});

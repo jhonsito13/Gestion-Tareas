@@ -4,18 +4,23 @@ function TaskItem({ task, onDelete, onComplete }) {
   return (
     <div className="flex justify-between items-center p-4 bg-white border border-gray-300 rounded-md shadow-md">
       <div className="mr-4"> {/* Añadimos margen a la derecha */}
-        <h3 className="text-lg font-semibold mb-2">{task.title}</h3> {/* Añadimos margen abajo */}
+      <h3 className={`text-lg font-semibold mb-2 ${task.completed ? 'line-through text-gray-500' : ''}`}>
+          {task.title}
+        </h3>
         <p className="text-gray-600">{task.description}</p>
       </div>
       <div className="flex items-center space-x-4">
         {/* Botón de completar tarea */}
+        
+       
         <button
           onClick={() => onComplete(task.id)} // Llamada a la función onComplete con el id de la tarea
           className={`px-4 py-2 rounded ${task.completed ? 'bg-green-600' : 'bg-blue-500'} text-white hover:bg-blue-600`}
+          
         >
           {task.completed ? 'Completada' : 'Completar'}
         </button>
-
+            
         {/* Botón para eliminar tarea con diseño mejorado */}
         <button
           onClick={() => onDelete(task.id)}
