@@ -13,7 +13,7 @@ function TaskFilter({ filter, setFilter }) {
         onClick={() => setFilter('active')}
         className={`px-4 py-2 rounded ${filter === 'active' ? 'bg-yellow-600' : 'bg-yellow-500'} text-white hover:bg-yellow-600`}
       >
-        Activas
+        Pendientes
       </button>
       <button
         onClick={() => setFilter('completed')}
